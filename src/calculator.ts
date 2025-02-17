@@ -19,9 +19,9 @@ export function stringInputToArr(input: string): number[] {
         input = inputArr.slice(1).join(delimiter);
     }
     input = input.replace(/\n/g, delimiter);
-    return input.split(delimiter).map(input => {
-        const inputTrimmed = input.trim();
-        const num = inputTrimmed === "" ? 0 : parseInt(inputTrimmed);
+    return input.split(delimiter).map(inputChar => {
+        inputChar = inputChar.trim();
+        const num = inputChar === "" ? 0 : +inputChar;
         if(isNaN(num) || num < 0) {
            throw new Error('invalid input '+ input);
        }
