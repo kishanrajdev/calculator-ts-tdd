@@ -6,7 +6,15 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question('Please enter your input', (input) => {
-    add(input);
+console.log('Enter multi-line input (press Ctrl+D to finish):');
+
+let input = '';
+rl.on('line', (line) => {
+    input += line + '\n';
+})
+
+rl.on('close', () => {
+    input = input.trim();
+    console.log('sum: ' + add(input));
     rl.close();
 });
