@@ -6,7 +6,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-console.log('Enter multi-line input (press Ctrl+D to finish):');
+console.log('Enter input (press Ctrl+D to finish):');
 
 let input = '';
 rl.on('line', (line) => {
