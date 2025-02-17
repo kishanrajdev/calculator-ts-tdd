@@ -3,6 +3,7 @@ export function add (input: string): number {
 }
 
 export function stringInputToArr(input: string): number[] {
-    return []
+    const output: number[] = input.split(',').map(input => parseInt(input.trim()) || 0);
+    return output;
 }
 
